@@ -298,3 +298,94 @@ result_prime = count_primes(100)
 print(f"The value of result is: {result_prime}")
 '''
 #---------------------------------------------------------------------------------------------------------
+# Program 15: Write a function that calculates the volume of a sphere, given its radius
+'''
+import math
+
+def vol(rad):
+  return ((4 / 3) * (math.pi) * (rad ** 3))
+      
+result_vol = vol(2)
+print(f"The volume of the sphere is: {result_vol}")
+'''
+#---------------------------------------------------------------------------------------------------------
+# Program 16: Write a function that checks if a given number is within the range (including high/low)
+'''
+def ran_check(num, low, high):
+  if (low < num <= high):
+    return print(f"{num} is in the range between {low} and {high}.")
+  else:
+    return False
+
+ran_check(8, 2, 7)
+ran_check(5, 2, 7)
+'''
+#---------------------------------------------------------------------------------------------------------
+# Program 17: Write a function that accepts a string and calculates the number of upper case letters and 
+# lower case letters
+'''
+def up_low(st):
+  upper_case = 0
+  lower_case = 0
+  
+  for char in st:
+    if char.isupper():
+      upper_case += 1
+    elif char.islower():
+      lower_case += 1
+  
+  return upper_case, lower_case
+
+s = "Hello Mr. Rogers, how are you this fine Monday?"
+upper_case_letters, lower_case_letters = up_low(s)
+
+print(f"The number of upper case characters is/are: {upper_case_letters}")
+print(f"The number of lower case characters is/are: {lower_case_letters}")
+'''
+#---------------------------------------------------------------------------------------------------------
+# Program 18: Write a function that accepts a list and returns a new list with unique elements of the
+# first list
+'''
+def unique_list(lst):
+  return list(set(lst)) 
+
+unique_list([1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 5])
+'''
+#---------------------------------------------------------------------------------------------------------
+# Program 19: Write a function to multiply all the numbers in a list
+'''
+def multiply(numbers_list):
+  total = 1
+  
+  for x in numbers_list:
+    total *= x
+  
+  return total
+
+return_prod = multiply([1, 2, 3, -4])
+print(f"The product is: {return_prod}")
+'''
+#---------------------------------------------------------------------------------------------------------
+# Program 20: Write a function that checks if an input string is palindrome or not
+'''
+def palindrome(s):
+  s = s.replace(" ", "")
+  return s == s[::-1]
+
+print(f"Is 'helleh' a palindrome?: {palindrome("helleh")}")
+'''
+#---------------------------------------------------------------------------------------------------------
+# Program 21: Write a function that checks if an input string is pangram or not
+'''
+import string
+
+def ispangram(s, alphabet = string.ascii_lowercase):
+  alphabet_set = set(alphabet)
+  s = s.replace(" ", "")
+  s = s.lower()
+  string_set = set(s)
+  return string_set == alphabet_set 
+
+ispangram("The quick brown fox jumps over the lazy dog")
+'''
+#---------------------------------------------------------------------------------------------------------
